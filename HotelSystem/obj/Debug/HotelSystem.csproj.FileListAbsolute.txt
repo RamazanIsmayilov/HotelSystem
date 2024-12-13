@@ -1,0 +1,14 @@
+C:\Users\User\OneDrive\Desktop\Hotel System\HotelSystem\HotelSystem\bin\Debug\HotelSystem.exe.config
+C:\Users\User\OneDrive\Desktop\Hotel System\HotelSystem\HotelSystem\bin\Debug\HotelSystem.exe
+C:\Users\User\OneDrive\Desktop\Hotel System\HotelSystem\HotelSystem\bin\Debug\HotelSystem.pdb
+C:\Users\User\OneDrive\Desktop\Hotel System\HotelSystem\HotelSystem\obj\Debug\HotelSystem.csproj.AssemblyReference.cache
+C:\Users\User\OneDrive\Desktop\Hotel System\HotelSystem\HotelSystem\obj\Debug\HotelSystem.csproj.SuggestedBindingRedirects.cache
+C:\Users\User\OneDrive\Desktop\Hotel System\HotelSystem\HotelSystem\obj\Debug\HotelSystem.Form1.resources
+C:\Users\User\OneDrive\Desktop\Hotel System\HotelSystem\HotelSystem\obj\Debug\HotelSystem.Properties.Resources.resources
+C:\Users\User\OneDrive\Desktop\Hotel System\HotelSystem\HotelSystem\obj\Debug\HotelSystem.csproj.GenerateResource.cache
+C:\Users\User\OneDrive\Desktop\Hotel System\HotelSystem\HotelSystem\obj\Debug\HotelSystem.csproj.CoreCompileInputs.cache
+C:\Users\User\OneDrive\Desktop\Hotel System\HotelSystem\HotelSystem\obj\Debug\HotelSystem.exe
+C:\Users\User\OneDrive\Desktop\Hotel System\HotelSystem\HotelSystem\obj\Debug\HotelSystem.pdb
+C:\Users\User\OneDrive\Desktop\Hotel System\HotelSystem\HotelSystem\obj\Debug\HotelSystem.Login.resources
+C:\Users\User\OneDrive\Desktop\Hotel System\HotelSystem\HotelSystem\obj\Debug\HotelSystem.ManagaClients.resources
+C:\Users\User\OneDrive\Desktop\Hotel System\HotelSystem\HotelSystem\obj\Debug\HotelSystem.ManageRooms.resources
