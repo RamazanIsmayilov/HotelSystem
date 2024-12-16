@@ -54,9 +54,18 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dateOutMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.submitButton = new System.Windows.Forms.Button();
-            this.reservIdLabel = new System.Windows.Forms.Label();
-            this.reservIdTextBox = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.dateOut = new System.Windows.Forms.MaskedTextBox();
+            this.dateIn = new System.Windows.Forms.MaskedTextBox();
+            this.isNotFree = new System.Windows.Forms.CheckBox();
+            this.IsFree = new System.Windows.Forms.CheckBox();
+            this.roomType = new System.Windows.Forms.ComboBox();
+            this.submit = new System.Windows.Forms.Button();
+            this.roomNo2 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -68,7 +77,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1276, 84);
+            this.panel1.Size = new System.Drawing.Size(1135, 84);
             this.panel1.TabIndex = 2;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -331,53 +340,154 @@
             this.dateOutMaskedTextBox.Size = new System.Drawing.Size(210, 15);
             this.dateOutMaskedTextBox.TabIndex = 36;
             this.dateOutMaskedTextBox.ValidatingType = typeof(System.DateTime);
-            this.dateOutMaskedTextBox.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.dateOutMaskedTextBox_MaskInputRejected);
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.panel2.Controls.Add(this.submitButton);
-            this.panel2.Controls.Add(this.reservIdLabel);
-            this.panel2.Controls.Add(this.reservIdTextBox);
-            this.panel2.Location = new System.Drawing.Point(444, 212);
+            this.panel2.Controls.Add(this.roomNo2);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.dateOut);
+            this.panel2.Controls.Add(this.dateIn);
+            this.panel2.Controls.Add(this.isNotFree);
+            this.panel2.Controls.Add(this.IsFree);
+            this.panel2.Controls.Add(this.roomType);
+            this.panel2.Controls.Add(this.submit);
+            this.panel2.Location = new System.Drawing.Point(417, 101);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(233, 139);
+            this.panel2.Size = new System.Drawing.Size(439, 361);
             this.panel2.TabIndex = 38;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            this.panel2.Visible = false;
             // 
-            // submitButton
+            // label3
             // 
-            this.submitButton.BackColor = System.Drawing.Color.Brown;
-            this.submitButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.submitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.submitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.submitButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.submitButton.Location = new System.Drawing.Point(9, 93);
-            this.submitButton.Name = "submitButton";
-            this.submitButton.Size = new System.Drawing.Size(210, 29);
-            this.submitButton.TabIndex = 39;
-            this.submitButton.Text = "Submit";
-            this.submitButton.UseVisualStyleBackColor = false;
-            this.submitButton.Click += new System.EventHandler(this.button1_Click);
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(20, 179);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(96, 25);
+            this.label3.TabIndex = 47;
+            this.label3.Text = "Date Out:";
             // 
-            // reservIdLabel
+            // label4
             // 
-            this.reservIdLabel.AutoSize = true;
-            this.reservIdLabel.Location = new System.Drawing.Point(3, 51);
-            this.reservIdLabel.Name = "reservIdLabel";
-            this.reservIdLabel.Size = new System.Drawing.Size(68, 16);
-            this.reservIdLabel.TabIndex = 1;
-            this.reservIdLabel.Text = "Reserv Id:";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(20, 142);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(80, 25);
+            this.label4.TabIndex = 46;
+            this.label4.Text = "Date In:";
             // 
-            // reservIdTextBox
+            // label5
             // 
-            this.reservIdTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(231)))), ((int)(((byte)(233)))));
-            this.reservIdTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.reservIdTextBox.Location = new System.Drawing.Point(89, 52);
-            this.reservIdTextBox.Name = "reservIdTextBox";
-            this.reservIdTextBox.Size = new System.Drawing.Size(130, 15);
-            this.reservIdTextBox.TabIndex = 0;
-            this.reservIdTextBox.TextChanged += new System.EventHandler(this.reservIdTextBox_TextChanged);
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(25, 214);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(58, 25);
+            this.label5.TabIndex = 45;
+            this.label5.Text = "Free:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(20, 107);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(119, 25);
+            this.label6.TabIndex = 44;
+            this.label6.Text = "Room Type:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(26, 49);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(99, 25);
+            this.label7.TabIndex = 43;
+            this.label7.Text = "Room No:";
+            // 
+            // dateOut
+            // 
+            this.dateOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(231)))), ((int)(((byte)(233)))));
+            this.dateOut.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dateOut.Location = new System.Drawing.Point(151, 186);
+            this.dateOut.Mask = "00/00/0000";
+            this.dateOut.Name = "dateOut";
+            this.dateOut.Size = new System.Drawing.Size(210, 15);
+            this.dateOut.TabIndex = 42;
+            this.dateOut.ValidatingType = typeof(System.DateTime);
+            // 
+            // dateIn
+            // 
+            this.dateIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(231)))), ((int)(((byte)(233)))));
+            this.dateIn.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dateIn.Location = new System.Drawing.Point(151, 149);
+            this.dateIn.Mask = "00/00/0000";
+            this.dateIn.Name = "dateIn";
+            this.dateIn.Size = new System.Drawing.Size(210, 15);
+            this.dateIn.TabIndex = 41;
+            this.dateIn.ValidatingType = typeof(System.DateTime);
+            // 
+            // isNotFree
+            // 
+            this.isNotFree.AutoSize = true;
+            this.isNotFree.Location = new System.Drawing.Point(243, 214);
+            this.isNotFree.Name = "isNotFree";
+            this.isNotFree.Size = new System.Drawing.Size(47, 20);
+            this.isNotFree.TabIndex = 40;
+            this.isNotFree.Text = "No";
+            this.isNotFree.UseVisualStyleBackColor = true;
+            // 
+            // IsFree
+            // 
+            this.IsFree.AutoSize = true;
+            this.IsFree.Location = new System.Drawing.Point(161, 215);
+            this.IsFree.Name = "IsFree";
+            this.IsFree.Size = new System.Drawing.Size(53, 20);
+            this.IsFree.TabIndex = 39;
+            this.IsFree.Text = "Yes";
+            this.IsFree.UseVisualStyleBackColor = true;
+            // 
+            // roomType
+            // 
+            this.roomType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(231)))), ((int)(((byte)(233)))));
+            this.roomType.DisplayMember = "single";
+            this.roomType.FormattingEnabled = true;
+            this.roomType.Items.AddRange(new object[] {
+            "single",
+            "twice"});
+            this.roomType.Location = new System.Drawing.Point(147, 107);
+            this.roomType.Name = "roomType";
+            this.roomType.Size = new System.Drawing.Size(212, 24);
+            this.roomType.TabIndex = 38;
+            this.roomType.ValueMember = "single";
+            // 
+            // submit
+            // 
+            this.submit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.submit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.submit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.submit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.submit.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.submit.Location = new System.Drawing.Point(92, 310);
+            this.submit.Name = "submit";
+            this.submit.Size = new System.Drawing.Size(256, 36);
+            this.submit.TabIndex = 30;
+            this.submit.Text = "Submit";
+            this.submit.UseVisualStyleBackColor = false;
+            this.submit.Click += new System.EventHandler(this.submit_Click);
+            // 
+            // roomNo2
+            // 
+            this.roomNo2.Location = new System.Drawing.Point(161, 53);
+            this.roomNo2.Name = "roomNo2";
+            this.roomNo2.Size = new System.Drawing.Size(100, 22);
+            this.roomNo2.TabIndex = 50;
             // 
             // ManageRooms
             // 
@@ -405,6 +515,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "ManageRooms";
             this.Text = "ManageRooms";
+            this.Load += new System.EventHandler(this.ManageRooms_Load_1);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -443,8 +554,18 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label reservIdLabel;
-        private System.Windows.Forms.TextBox reservIdTextBox;
-        private System.Windows.Forms.Button submitButton;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.MaskedTextBox dateOut;
+        private System.Windows.Forms.MaskedTextBox dateIn;
+        private System.Windows.Forms.CheckBox isNotFree;
+        private System.Windows.Forms.CheckBox IsFree;
+        private System.Windows.Forms.ComboBox roomType;
+        private System.Windows.Forms.TextBox roomNo;
+        private System.Windows.Forms.Button submit;
+        private System.Windows.Forms.TextBox roomNo2;
     }
 }

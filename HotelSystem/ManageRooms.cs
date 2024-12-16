@@ -17,6 +17,8 @@ namespace HotelSystem
             InitializeComponent();
         }
 
+        bool editIsVisible = false;
+
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -77,37 +79,14 @@ namespace HotelSystem
 
         private void editButton_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(roomNoTextBox.Text))
-            {
-                string roomNo = roomNoTextBox.Text;
-
-                foreach (DataGridViewRow row in dataGridView1.Rows)
-                {
-                    if (row.Cells[2].Value?.ToString() == roomNo) 
-                    {
-                        row.Cells[3].Value = yesCheckBox.Checked ? "Yes" : "No"; 
-                        row.Cells[4].Value = roomTypeComboBox.SelectedItem?.ToString(); 
-                        row.Cells[5].Value = dateInMaskedTextBox.Text; 
-                        row.Cells[6].Value = dateOutMaskedTextBox.Text;
-
-                        MessageBox.Show("Information updated successfully.", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        ClearFields();
-                        return;
-                    }
-                }
-
-                MessageBox.Show("This room number was not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                MessageBox.Show("Enter the room number.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            panel2.Visible = true;
+           
         }
 
         private void removeButton_Click(object sender, EventArgs e)
         {
-            // Paneli açırıq
-            panel2.Visible = true;
+            dataGridView1.Rows.Remove(dataGridView1.SelectedRows[0]);
+            MessageBox.Show("Data was successfully deleted.", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
 
@@ -124,7 +103,6 @@ namespace HotelSystem
 
         private void ManageRooms_Load(object sender, EventArgs e)
         {
-            panel2.Visible = false;
             roomTypeComboBox.Items.Add("Single");
             roomTypeComboBox.Items.Add("Double");
 
@@ -150,55 +128,52 @@ namespace HotelSystem
 
         }
 
-        private void dateOutMaskedTextBox_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        
+
+        private void ManageRooms_Load_1(object sender, EventArgs e)
         {
 
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
+        private void submit_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void reservIdTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            // Burada "submit" düyməsinə basıldıqda rezerv ID ilə silmə əməliyyatı baş verir
-            string reserveIdToDelete = reservIdTextBox.Text;
-
-            if (!string.IsNullOrWhiteSpace(reserveIdToDelete))
+            var row = dataGridView1.SelectedRows[0];
+            if (
+                String.IsNullOrEmpty(roomType.Text) ||
+                String.IsNullOrEmpty(dateIn.Text) ||
+                String.IsNullOrEmpty(dateOut.Text)||
+                String.IsNullOrEmpty(roomNo2.Text))
             {
-                bool found = false;
-
-                foreach (DataGridViewRow row in dataGridView1.Rows)
-                {
-                    if (row.Cells[1].Value?.ToString() == reserveIdToDelete)  // reserveId yoxlayırıq
-                    {
-                        dataGridView1.Rows.Remove(row);
-                        found = true;
-                        break;
-                    }
-                }
-
-                if (found)
-                {
-                    MessageBox.Show("Data was successfully deleted.", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    panel2.Visible = false;  // Paneli bağlayırıq
-                    ClearFields();  // TextBox-ları təmizləyirik
-                }
-                else
-                {
-                    MessageBox.Show("This reserve ID was not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                MessageBox.Show("Tam doldurun");
             }
             else
             {
-                MessageBox.Show("Enter the reserve ID.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (row != null)
+                    {
+                        row.Cells[2].Value = roomNo2.Text;
+                        row.Cells[3].Value = roomType.Text;
+                        row.Cells[4].Value = dateIn.Text;
+                        row.Cells[5].Value = dateOut.Text;
+                        row.Cells[6].Value = IsFree.Checked? IsFree.Text:isNotFree.Text;
+
+                        MessageBox.Show("Information updated successfully.", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ClearFields();
+                    panel2.Visible = false;
+                        return;
+                    }
+                
+
+                MessageBox.Show("This room number was not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+            //{
+            //    string roomNo2 = roomNoTextBox.Text;
+
+              
+            //else
+            //{
+            //    MessageBox.Show("Enter the room number.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
+        }
     }
-}
+
